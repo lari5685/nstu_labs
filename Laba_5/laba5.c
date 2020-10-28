@@ -49,13 +49,13 @@ double sum4(double x, double eps, int* m) {
     return s;
 }
 
-//5. sh(x) sn: 
+//5. sh(x) sn: x*x/((2*n-1)*(2*n-2));
 double sum5(double x,double eps,int *m){
 	double s,sn;
 	int n; 
-	for(s = 0, sn = 1, n = 1; fabs(sn) > eps; n++){
+	for(s = 0, sn = x, n = 2; fabs(sn) > eps; n++){
 		s += sn;
-		sn = -sn * x*x/(2*n*(2*n-1));
+		sn = sn * x*x/((2*n-1)*(2*n-2));
 	}
 	*m = n;
 	return s;
@@ -67,7 +67,7 @@ double sum6(double x,double eps,int *m){
 	int n; 
 	for(s = 0, sn = 1, n = 1; fabs(sn) > eps; n++){
 		s += sn;
-		sn = -sn * x*x/(2*n*(2*n-1));
+		sn = sn * x*x/((2*n-1)*2*n);
 	}
 	*m = n;
 	return s;
@@ -77,14 +77,16 @@ double sum6(double x,double eps,int *m){
 int main(){ 
 	int nn;
 	double x;
-	//for (x=0; x <= 3; x += 0.1)
-		//printf("n=%d \t x=%0.1f \t sum=%0.4lf \t cos=%0.4lf\n", nn,x, sum1(x, 0.00001, &nn), cos(x));
-	//for (x=0.1; x <= 10; x += 0.1)
-		//printf("n=%d \t x=%0.1f \t sum=%0.4lf \t ln=%0.4lf\n", nn,x, sum2(x, 0.00001, &nn), log(x));
-	//for (x=0; x <= 10; x += 0.1)
-		//printf("n=%d \t x=%0.1f \t sum=%0.4lf \t x^3=%0.4lf\n", nn,x, sum3(x, 0.00001, &nn), pow(3,x));
-	//for (x=0.5; x <= 10; x += 0.1)
-		//printf("n=%d \t x=%0.1f \t sum=%0.4lf \t ln=%0.4lf\n", nn,x, sum4(x, 0.0001, &nn), log(x));
+	for (x=0; x <= 3; x += 0.1)
+		printf("n=%d \t x=%0.1f \t sum=%0.4lf \t cos=%0.4lf\n", nn,x, sum1(x, 0.00001, &nn), cos(x));
+	for (x=0.1; x <= 10; x += 0.1)
+		printf("n=%d \t x=%0.1f \t sum=%0.4lf \t ln=%0.4lf\n", nn,x, sum2(x, 0.00001, &nn), log(x));
+	for (x=0; x <= 10; x += 0.1)
+		printf("n=%d \t x=%0.1f \t sum=%0.4lf \t x^3=%0.4lf\n", nn,x, sum3(x, 0.00001, &nn), pow(3,x));
 	for (x=0.5; x <= 10; x += 0.1)
 		printf("n=%d \t x=%0.1f \t sum=%0.4lf \t ln=%0.4lf\n", nn,x, sum4(x, 0.0001, &nn), log(x));
+	for (x=0; x <= 10; x += 0.1)
+		printf("n=%d \t x=%0.1f \t sum=%0.4lf \t sh=%0.4lf\n", nn,x, sum5(x, 0.0000001, &nn), sinh(x));
+	for (x=0; x <= 10; x += 0.1)
+		printf("n=%d \t x=%0.1f \t sum=%0.4lf \t ch=%0.4lf\n", nn,x, sum6(x, 0.0000001, &nn), cosh(x));
 }
