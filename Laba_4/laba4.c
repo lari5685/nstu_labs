@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 int main()
+// number 38
 {
     int min;
     int s1 = 480608,
