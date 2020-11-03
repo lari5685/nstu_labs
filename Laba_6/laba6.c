@@ -4,7 +4,7 @@
 
 
 int main() {
-	char str[]= "abc2,3defg2ho";
+	char str[]="";
 	char out[100];
 	gets(str);
 	int p=0, a = 0, b = 0; 
