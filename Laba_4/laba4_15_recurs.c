@@ -4,13 +4,14 @@ void sum(int *s){
 	int a=0, b, c=0;
 	for(int i = 0; i < 3; i++) a = a*10 + s[i];
 	b = 5+s[3]*10;
-	for(int i = 4; i < 9; i++) c = c*10 + s[i];
+	for(int i = 4; i < 10; i++) c = c*10 + s[i];
 
 	if (a*b ==c)
 		printf("%d * %d = %d\n", a,b,c);
 }
 
 void def(int *f, int *out, int n){
+
 	if (n == 9){
 		sum(out);
 	}
