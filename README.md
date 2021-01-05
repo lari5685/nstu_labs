@@ -9,6 +9,8 @@
 
 # РГР
 * Lari - решения 7 варианта.
+* Инструкция по установке и подключению библиотеки glut:
+ [![](https://i.imgur.com/kDHHd6j.png)](https://youtu.be/xoqJAlX8n2g)
 
 # PS
 Это решенные лаб [Романова из НГТУ.](http://ermak.cs.nstu.ru/cprog/HTML/index.htm) 
