@@ -13,8 +13,8 @@
  [![](https://i.imgur.com/kDHHd6j.png)](https://youtu.be/xoqJAlX8n2g)
 
 # PS
-Это решенные лаб [Романова из НГТУ.](http://ermak.cs.nstu.ru/cprog/HTML/index.htm) 
-Удачи, она вам понадобиться!
+1 семестр: решенные лаб [Романова из НГТУ.](http://ermak.cs.nstu.ru/cprog/HTML/index.htm) 
+2 семестр: решенные некоторых лаб от Архиповой. 
 
 
 # authors
