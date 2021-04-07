@@ -1,9 +1,11 @@
 '''
+
 В одномерном массиве, состоящем из n вещественных элементов, вычислить:
 1. Сумму отрицательных элементов.
 2. Произведение элементов, расположенных между максимальным и минимальным
 элементами.
 Упорядочить элементы массива по возрастанию.
+
 '''
 
 from random import *
@@ -11,7 +13,7 @@ from random import *
 def generator(count, is_print):
 	main_list = []
 	for _ in range(count):
-		main_list.append(randint(-10,10)) 
+		main_list.append(randint(-100,100)) 
 	if is_print:
 		print(main_list)
 	return main_list
