@@ -16,7 +16,7 @@ def find_x(a, p, y):
 	
 	for j in range(1, m):
 		u.append((b ** j) % p)
-		find_i = 1
+	find_i = 1
 	while True:
 		v = (y * a ** find_i % p)
 
@@ -31,7 +31,7 @@ def find_x(a, p, y):
 	
 def main():
 	print("2^x mod 30203 = 24322")
-	print("x =", find_x(6, 229, 12))
+	print("x =", find_x(2, 30203, 24322))
 
 if __name__ == "__main__":
 	main()

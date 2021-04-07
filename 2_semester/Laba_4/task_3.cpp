@@ -33,7 +33,7 @@ double x_su(int count){
 
 
 int main(){
-	std::cout << "count = " << 50   << "  \tx-си = "<< x_su(50)   << std::endl;
-	std::cout << "count = " << 100  << "  \tx-си = "<< x_su(100)  << std::endl;
-	std::cout << "count = " << 1000 << "  \tx-си = "<< x_su(1000) << std::endl;
+	std::cout << "count = " << 50   << "  \tx-sqr = "<< x_su(50)   << std::endl;
+	std::cout << "count = " << 100  << "  \tx-sqr = "<< x_su(100)  << std::endl;
+	std::cout << "count = " << 1000 << "  \tx-sqr = "<< x_su(1000) << std::endl;
 }
