@@ -63,6 +63,13 @@ def task_2(main_list):
 		multiply *= main_list[i]
 	return multiply
 
+def task_3(main_list):
+	for i in range(len(main_list)):
+		for j in range(i,len(main_list)):
+			if main_list[i] < main_list[j]:
+				main_list[i], main_list[j] = main_list[j], main_list[i]
+	return main_list
+
 
 def main():
 	count = 10 #int(input("enter n: "))
@@ -73,6 +80,10 @@ def main():
 
 	print(task_2(main_list))
 
+	sorted_list = task_3(main_list)
+	for element in sorted_list:
+		print(element, end = " ")
+	print()
 
 
 if "__main__" == __name__:
