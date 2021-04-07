@@ -68,8 +68,8 @@ void task_3(std::vector<int> &main_list){
 
 int main(){
 	int count = 10;
-	std::vector<int> main_list, sorted_list;
-	//std::cin >> count	
+	std::vector<int> main_list;
+	//std::cin >> count;	
 
 	main_list = generator(count);
 	for (auto element : main_list){
