@@ -12,8 +12,7 @@ void create_train(std::map <std::string, std::set<std::string>>& Trains, std::ma
 	for (auto item : input) {
 		Trains[name_train].insert(item);
 		Towns[item].insert(name_train);
-	}
-		
+	}	
 }
 void trains_for_town(std::map <std::string, std::set<std::string>> Towns, std::string name)
 {
