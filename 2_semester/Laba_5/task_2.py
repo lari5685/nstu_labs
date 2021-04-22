@@ -1,5 +1,7 @@
 
 def add_friend(friends, name_1, name_2):
+	if name_1 == name_2:
+		return
 	if type(friends.get(name_1)) != type(set()):
 		friends[name_1] = set()
 	if type(friends.get(name_2)) != type(set()):

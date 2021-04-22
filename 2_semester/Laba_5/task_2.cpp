@@ -5,6 +5,8 @@
 
 void add_friend(std::map <std::string, std::set<std::string>>& friends, std::string name_1, std::string name_2)
 {
+	if (name_1 == name_2)
+		return;
 	friends[name_1].insert(name_2);
 	friends[name_2].insert(name_1);
 }
