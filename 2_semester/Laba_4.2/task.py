@@ -18,8 +18,6 @@ def sliv(res, ans, n):
 
 def fun(m, n, res, ans):
 	if (n == 9):
-		if res == 1-2-3456789:
-			print(res)
 		if (res == m):
 			ans[8] = '2'
 		else:
@@ -36,7 +34,7 @@ def fun(m, n, res, ans):
 			return ans
 	return ans
 
-a = fun(123456789, 1, 1, ['0','0','0','0','0','0','0','0','0'])
+a = fun(12+3456789, 1, 1, ['0','0','0','0','0','0','0','0','0'])
 s = ''
 for i in range(8):
 	s += str(i+1)
