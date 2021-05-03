@@ -9,14 +9,13 @@
 
 import math
 def find_x(a, p, y):
-	m = int(math.sqrt(p))
-	v =[]
+	m = int(math.sqrt(p)) + 1
 	u =[]
-	b = a ** m % p
 	
 	for j in range(1, m):
-		u.append((b ** j) % p)
-	find_i = 1
+		u.append((a ** (j*m)) % p)
+
+	find_i = 0
 	while True:
 		v = (y * a ** find_i % p)
 
