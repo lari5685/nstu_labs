@@ -6,7 +6,7 @@ int main(){
 	int n = 5;
 	double sum = 0;
 	double average;
-	double sum_average;
+	double sum_average = 0;
 	vector <int> a_vector(n);
 
 	for (auto &item : a_vector)
