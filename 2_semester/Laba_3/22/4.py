@@ -20,6 +20,6 @@ def find_x(number, divisor):
 
 	return z
 
-d, m = 7, 10
+d, m = 11, 17
 print("%d * D mod %d = 1" %(d, m))
-print("D =", find_x(7, 10))
+print("D =", find_x(d,m))
