@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 void FancyPrint(vector<vector<double>> &A, vector<double> &B){
