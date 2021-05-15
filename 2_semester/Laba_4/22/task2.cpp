@@ -15,11 +15,10 @@ int main(){
 	vector <string> b_vector;
 	for ( string item : a_vector ){
 
-		string s ="210";
 		int a;
 		reverse(item.begin(), item.end());
 		a = atoi(item.c_str());  //переводит строку в число
-		b_vector.push_back((string)item);
+		b_vector.push_back(to_string(a));
 	}
 
 	for (auto &item : b_vector){
