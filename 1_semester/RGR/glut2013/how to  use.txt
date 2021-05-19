@@ -1,5 +1,0 @@
-1. Создать пустой проект - консольное приложение
-2. Настроить свойства (properties) (пр.кнопка по проекту) - VC++ Directories
-2.1. Добавить glut-3.7.6-bin в include directories
-2.2. Добавить glut-3.7.6-bin в library directories
-3 Скопировать glut32.dll в папку проекти (запуск из VS или в каталог exe-файла (Debug или Release))
