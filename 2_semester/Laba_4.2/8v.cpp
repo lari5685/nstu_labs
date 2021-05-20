@@ -3,7 +3,7 @@
 using namespace std;
 
 void outdomino(vector<pair<int,int>> &spisok, vector<int> &keys, int n){
-	for (auto item : keys){
+	for (auto item : keys){//вывод последовательности
 		if (item == -1)
 			break;
 		cout << spisok[item].first << '/' << spisok[item].second << ' ';
@@ -11,7 +11,7 @@ void outdomino(vector<pair<int,int>> &spisok, vector<int> &keys, int n){
 	cout << endl;
 }
 
-void revers(vector<pair<int,int>> &a, int n){
+void revers(vector<pair<int,int>> &a, int n){//переворачивает кость
 	int temp = a[n].first;
 	a[n].first = a[n].second;
 	a[n].second = temp;
@@ -19,7 +19,7 @@ void revers(vector<pair<int,int>> &a, int n){
 
 void domino(vector<pair<int,int>> &spisok, vector<int> &keys, int n){
 	bool is_find = false;
-	if (n == keys.size()){
+	if (n == keys.size()){ //если все кости раставлены, выводим и выходим
 		outdomino(spisok, keys, n);
 		return;
 	}
@@ -30,29 +30,29 @@ void domino(vector<pair<int,int>> &spisok, vector<int> &keys, int n){
 				is_repit = true;
 				break;
 			}
-		if (is_repit)
+		if (is_repit)//если такая уже использовалась, пропускаем шаг
 			continue;
 		if (n == 0){
+			//если мы в первые зашли в рекурсию
 			is_find = true;
 			keys[0] = i;
 			domino(spisok, keys, 1);
-			if (spisok[i].first != spisok[i].second)
-			{
+			if (spisok[i].first != spisok[i].second){
 				revers(spisok, i);
 				domino(spisok, keys, 1);
 				revers(spisok, i);
 			}
 			continue;
 		}
-		if (spisok[i].first == spisok[keys[n-1]].second)
-		{ 
+		if (spisok[i].first == spisok[keys[n-1]].second){ 
+			//если 2 номер на прошлой кости совпадает с 1 номером i-ой кости
 			keys[n] = i;
 			domino(spisok, keys, n+1);
 			keys[n] = -1;
 			is_find = true;
 		}
-		if (spisok[i].second == spisok[keys[n-1]].second && spisok[i].second != spisok[i].first)
-		{
+		if (spisok[i].second == spisok[keys[n-1]].second && spisok[i].second != spisok[i].first){
+			//если 2 номер на прошлой кости совпадает с 2 номером i-ой кости и кость не семетрична
 			keys[n] = i;
 			revers(spisok, i);
 			domino(spisok, keys, n+1);
