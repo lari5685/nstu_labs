@@ -58,7 +58,8 @@ int main()
 		TRAINS
 	};
 
-	std::map <std::string, std::set<std::string>> Trains = { {"train", {"a", "b"}} }, Towns = { {"a", {"train"}}, {"b", {"train"}} };
+	std::map <std::string, std::set<std::string>> Trains = { {"train", {"a", "b"}} };
+	std::map <std::string, std::set<std::string>> Towns = { {"a", {"train"}}, {"b", {"train"}} };
 	while (true) {
 		std::string comand, input, argm = "", name = "";
 		std::set<std::string> args;
