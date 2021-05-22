@@ -22,13 +22,18 @@ int WillDo(string ans){
 }
 
 void fileInput(string FileName, string &messege){
-	ifstream fin;
-	fin.open(FileName);
-	fin.getline(messege, 256);
+	string text;
+	ifstream fin(FileName);
+	while(!fin.eof()) {
+		fin >> text;
+		messege += text + " ";
+	}
+	if (messege.size() > 0)
+		messege.erase(messege.end()-1);  
 }
 
 int mod(int a, int b){
-	return (a%b >= 0) ? a%b : a%b +b;
+	return (a%b >= 0) ? a%b : a%b + b;
 }
 
 string CaesarCipher(string messege, int key, int WhatDo){// ASCII: 32 - 126
@@ -59,12 +64,17 @@ string XORCipher(string messege, string key){
 
 
 int main(){
+	cout << " Enter your login password\n";
+	string ans; cin >> ans;
+	if (ans != "1")
+		return -1;
+
 	cout << " Hello, this program like to decrypt and encrypt your messege.\n";
 	cout << " Enter number cipher method: \n\t1. Caesar.\n\t2. Viginer.\n\t3. XOR.\n";
 	
 	int method = Viginer; cin >> method; 
 	cout << " Good choice!\n What will we do? \n\t1. encrypt\n\t2. decrypt\n";
-	string ans = "encrypt"; cin >> ans;
+	cin >> ans;
 	while(!WillDo(ans)){
 		cout << "sorry, i didn't understand you, pls enter again\n"; cin >> ans;
 	}
