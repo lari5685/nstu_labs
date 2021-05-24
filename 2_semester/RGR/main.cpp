@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <cmath>
 #include <vector>
+#include "Caesar.h"
+#include "Viginer.h"
+#include "XOR.h"
+#include "FileWork.h"
 using namespace std;
 
 enum cryptDo {
@@ -24,23 +27,12 @@ int WillDo(string ans) {
 	return 0;
 }
 
-void fileInput(string FileName, string& messege) {
-	string text;
-	ifstream fin(FileName);
-	while (!fin.eof()) {
-		fin >> text;
-		messege += text + " ";
-	}
-	fin.close();
-	if (messege.size() > 0)
-		messege.erase(messege.end() - 1);
-}
-
 void StringToInt(string text, string& ASCIItext) {
 	ASCIItext = "";
 	for (char item : text)
 		ASCIItext += ' ' + to_string(int(item));
 }
+
 void IntToString(string ASCIItext, string& text) {
 	vector<char> v;
 	text = "";
@@ -59,43 +51,6 @@ void IntToString(string ASCIItext, string& text) {
 	for (char item : v)
 		text += item;
 }
-
-void fileOutput(string FileName, string& messege) {
-	ofstream fout(FileName);
-	fout << messege;
-	fout.close();
-}
-
-int mod(int a, int b) {
-	return (a % b >= 0) ? a % b : a % b + b;
-}
-
-string CaesarCipher(string messege, int key, int WhatDo) {// ASCII: 32 - 126
-	key *= (WhatDo == decrypt) ? 1 : -1;
-	string resMessege = "";
-	for (char item : messege)
-		resMessege += char(mod((int)item + key - 32, 95) + 32);
-	return resMessege;
-}
-
-string ViginerCipher(string messege, string key, int WhatDo) {// ASCII: 32 - 126
-	int p = (WhatDo == decrypt) ? 1 : -1;
-	string resMessege = "";
-	int k = -1;
-	for (char item : messege)
-		resMessege += char(mod((int)item + p * (int)(char)key[(++k) % key.size()] - 32, 95) + 32);
-	return resMessege;
-}
-
-string XORCipher(string messege, string key) {
-	int k = -1;
-	string resMessege = "";
-	for (char item : messege) {
-		resMessege += item ^ key[(++k) % key.size()];
-	}
-	return resMessege;
-}
-
 
 int main() {
 	string crypt_message;
