@@ -56,7 +56,9 @@ int main() {
 	string crypt_message;
 	cout << " Enter your login password:\n ";
 	string ans; cin >> ans;
-	if (ans != "1")
+	string password = XORCipher(CaesarCipher(ans, 666*13, decrypt), ViginerCipher(ans, "key", encrypt));
+	StringToInt(password, password);
+	if (password != " 25 45 120 59 21 72 103 119") // ну вы что, самый популярный пароль у нас... 
 		return -1;
 
 	cout << " Hello, this program like to decrypt and encrypt your messege.\n";
