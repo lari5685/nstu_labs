@@ -1,0 +1,2 @@
+compilation:
+g++ -c main.cpp && g++ -c Caesar.cpp && g++ -c Viginer.cpp && g++ main.o Caesar.o Viginer.o -o main.exe
