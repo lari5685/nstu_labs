@@ -4,6 +4,7 @@
 #include <vector>
 #include "Caesar.h"
 #include "Viginer.h"
+#include "A1Z23.h"
 using namespace std;
 
 enum cryptDo {
@@ -49,6 +50,7 @@ int main() {
 		crypt_message = ViginerCipher(messege, key_str, crypt);
 	}
 	if (method == A1Z23) {
+		crypt_message = A1Z23Cipher(messege, crypt);
 	}
 
 	cout << " Your messeg: ";
